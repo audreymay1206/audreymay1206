@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Audrey Ratliff | Data Analyst Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Neon Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    :root {
+      --neon-pink: #ff00cc;
+      --neon-blue: #00ffe7;
+      --neon-purple: #a259f7;
+      --neon-green: #39ff14;
+      --bg1: #171723;
+      --bg2: #22124a;
+      --card-bg: rgba(34,18,74,0.6);
+    }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Montserrat', 'Arial', sans-serif;
+      background: linear-gradient(135deg, var(--bg1) 60%, var(--bg2) 100%);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem .5rem 1rem;
+    }
+    .neon-title {
+      font-family: 'Orbitron', 'Montserrat', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 0.1em;
+      color: var(--neon-pink);
+      text-shadow:
+        0 0 8px var(--neon-pink),
+        0 0 25px var(--neon-blue),
+        0 0 50px var(--neon-pink);
+      margin-bottom: 0.5rem;
+    }
+    .neon-tagline {
+      color: var(--neon-blue);
+      text-shadow:
+        0 0 5px var(--neon-blue),
+        0 0 15px var(--neon-blue);
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    nav {
+      margin-bottom: 2.5rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+    }
+    nav li a {
+      color: var(--neon-green);
+      font-size: 1.1rem;
+      text-decoration: none;
+      font-family: 'Orbitron', 'Montserrat', sans-serif;
+      letter-spacing: 0.06em;
+      transition: color 0.2s, text-shadow 0.2s;
+      text-shadow: 0 0 8px var(--neon-green);
+      border-bottom: 2px solid transparent;
+    }
+    nav li a:hover, nav li a:focus {
+      color: var(--neon-pink);
+      text-shadow: 0 0 20px var(--neon-pink);
+      border-bottom: 2px solid var(--neon-pink);
+    }
+    .section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2.5rem 1rem;
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: 0 0 35px 0 var(--neon-blue), 0 0 0 6px var(--neon-purple) inset;
+      border: 2.5px solid var(--neon-pink);
+      position: relative;
+    }
+    .section h2 {
+      font-family: 'Orbitron', 'Montserrat', sans-serif;
+      color: var(--neon-green);
+      text-shadow:
+        0 0 7px var(--neon-green),
+        0 0 25px var(--neon-green);
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      text-align: center;
+    }
+    /* Skills, Tools, Professional and Analytical Skills */
+    .skills-list, .tools-list, .prof-skills-list, .analytical-skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: center;
+      margin-top: 1.5em;
+    }
+    .skills-list span, .prof-skills-list span, .analytical-skills-list span {
+      background: var(--neon-purple);
+      color: #fff;
+      font-family: 'Orbitron', 'Montserrat', sans-serif;
+      padding: 0.5em 1.3em;
+      border-radius: 18px;
+      font-weight: bold;
+      box-shadow: 0 0 12px var(--neon-purple);
+      font-size: 1.05em;
+      letter-spacing: 0.04em;
+      margin: 0.2em;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .skills-list span:hover, .prof-skills-list span:hover, .analytical-skills-list span:hover {
+      background: var(--neon-blue);
+      color: var(--neon-pink);
+      box-shadow: 0 0 18px var(--neon-blue);
+    }
+    .tools-list span {
+      background: var(--neon-blue);
+      color: #18182a;
+      font-family: 'Orbitron', 'Montserrat', sans-serif;
+      padding: 0.5em 1.3em;
+      border-radius: 18px;
+      font-weight: bold;
+      box-shadow: 0 0 12px var(--neon-blue);
+      font-size: 1.05em;
+      letter-spacing: 0.04em;
+      margin: 0.2em;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .tools-list span:hover {
+      background: var(--neon-green);
+      color: var(--neon-pink);
+      box-shadow: 0 0 18px var(--neon-green);
+    }
+    /* Projects grid */
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .project-card {
+      background: rgba(20,20,30,0.9);
+      border-radius: 16px;
+      box-shadow: 0 0 30px 0 var(--neon-blue), 0 0 0 4px var(--neon-pink) inset;
+      border: 2px solid var(--neon-purple);
+      width: 260px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+      padding: 1.5rem 1rem 1rem 1rem;
+    }
+    .project-card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 60px var(--neon-pink), 0 0 0 6px var(--neon-blue) inset;
+      border-color: var(--neon-pink);
+    }
+    .project-card svg, .project-card img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 1.2em;
+      filter: drop-shadow(0 0 12px var(--neon-blue));
+      background: none;
+      border-radius: 12px;
+    }
+    .project-title {
+      color: var(--neon-pink);
+      font-family: 'Orbitron', 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 0 8px var(--neon-pink);
+    }
+    .project-desc {
+      color: var(--neon-blue);
+      font-size: 1rem;
+      min-height: 38px;
+    }
+    /* Certificate */
+    .certificate-img {
+      max-width: 400px;
+      width: 100%;
+      border: 2px solid #00ffe7;
+      border-radius: 12px;
+      box-shadow: 0 0 30px #00ffe7;
+      margin: 0 auto 1em auto;
+      display: block;
+      background: #fff;
+      padding: 12px;
+    }
+    /* Contact */
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2.5em;
+      margin-bottom: 1.5em;
+      font-size: 2.2em;
+    }
+    .contact-icons a {
+      color: var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green);
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+    .contact-icons a:hover {
+      color: var(--neon-pink);
+      text-shadow: 0 0 20px var(--neon-pink);
+    }
+    .contact-email {
+      display: block;
+      text-align: center;
+      margin: 1.3em 0 0 0;
+      color: var(--neon-blue);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      letter-spacing: 0.02em;
+      text-shadow: 0 0 8px var(--neon-blue);
+    }
+    /* Footer */
+    #footer {
+      margin-top: 3em;
+      text-align: center;
+      font-size: 1em;
+      color: #aaa;
+      padding-bottom: 2em;
+      letter-spacing: 0.02em;
+    }
+    #footer a { color: var(--neon-green); text-shadow: 0 0 5px var(--neon-green); }
+    @media (max-width: 650px) {
+      .section {
+        padding: 1.2rem 0.3rem;
+      }
+      .projects-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .project-card {
+        width: 96vw;
+        max-width: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="neon-title">Audrey Ratliff</div>
+  <div class="neon-tagline">
+    Data Analyst In Process: Come Talk Data To Me, And Get Your Hands Dirty By Turning Data Into Information And Information Into Insight And Giving Data A Voice!:)
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#technical-skills">Technical Skills</a></li>
+      <li><a href="#professional-skills">Professional Skills</a></li>
+      <li><a href="#analytical-skills">Analytical Skills</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#certificate">Certificate</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="about" class="section">
+  <h2>About Me</h2>
+  <p style="font-size:1.15em; text-align:center;">
+    Hi! I'm Audrey. 
+    A Passionate Data Analyst(Still training).   
+    Growing up with brothers as the only girl, you can bet your bottom dollar that I learned a thing or two about adaptability, alertness, and assertiveness. And let me tell you, those qualities have come in handy in my professional journey. I was always on my toes, always learning, always exploring, and always ready for the next adventure! And just like how my brothers taught me to be tough, I know that in my line of work, I'm always up for a challenge.  
+    One of my favorite things to do is getting hands-on with data. I thrive on transforming raw data into actionable insights, and enjoy giving data a voice through compelling stories, dashboards, and analytics.<br>
+  </p>
+</section>
+
+<section id="projects" class="section">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <!-- Project 1 -->
+    <div class="project-card">
+      <img src="undraw_coming-soon_7lvi.svg" alt="Coming Soon">
+      <div class="project-title">SQL Project</div>
+      <div class="project-desc">Coming Soon!</div>
+    </div>
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="undraw_coming-soon_7lvi.svg" alt="Capstone Coming Soon">
+      <div class="project-title">Capstone Project</div>
+      <div class="project-desc">Coming Soon!</div>
+    </div>
+    <!-- Project 3 -->
+    <div class="project-card">
+      <img src="undraw_coming-soon_7lvi.svg" alt="Excel Project Coming Soon">
+      <div class="project-title">Excel Project</div>
+      <div class="project-desc">Coming Soon!</div>
+     </div>
+  </div>
+</section>
+
+<section id="technical-skills" class="section">
+  <h2>Technical Skills Processing</h2>
+  <div class="skills-list">
+    <span>Advanced Data Manipulation</span>
+    <span>Data Analysis</span>
+    <span>Data Cleaning</span>
+    <span>Data Collection</span>
+    <span>Data Interpretation</span>
+    <span>Data Organization</span>
+    <span>Data Transformation</span>
+    <span>Data Visualization</span>
+  </div>
+</section>
+
+<section id="professional-skills" class="section">
+  <h2>Professional Skills Proccesing</h2>
+  <div class="prof-skills-list">
+    <span>1:1 Coaching</span>
+    <span>Adaptability</span>
+    <span>Career Readiness</span>
+    <span>Communication</span>
+    <span>Creativity</span>
+    <span>Critical Thinking</span>
+    <span>Group Learning</span>
+    <span>Ethical Judgment</span>
+    <span>Leadership</span>
+    <span>Professionalism</span>
+    <span>Resilience</span>
+    <span>Teamwork & Collaboration</span>
+    <span>Time Management</span>
+
+  </div>
+</section>
+
+<section id="analytical-skills" class="section">
+  <h2>Analytical Skills Processing</h2>
+  <div class="analytical-skills-list"> 
+    <span>Exploratory Data Analysis (EDA)</span>
+    <span>Structured Problem Solving</span>
+    <span>Statistical Analysis</span>
+    <span>Predictive Analytics</span>
+   </div>
+</section>
+
+<section id="tools" class="section">
+  <h2>Tools Processing</h2>
+  <div class="tools-list">
+    <span>Coursera</span>
+    <span>Dashboards</span>
+    <span>Google Suit</span>
+    <span>Merit America Learner Portal</span>
+    <span>Mircosoft</span>
+    <span>Slack</span>
+    <span>Spreadsheet (Excel)</span>
+    <span>SQL</span>
+    <span>R-Programming</span>
+    <span>Tableau</span>
+    <span>Presentations</span
+    <span>Python</span>
+    <span>Zoom</span> 
+   </div>
+</section>
+
+<section id="certificate" class="section">
+  <h2>Certificate In The Making</h2>
+  <img src="images/certificate-placeholder.png" alt="Certificate in progress" class="certificate-img">
+  <p>
+    The ability to listen to data, understand its secrets, and coax valuable stories from it to drive meaningful decisions is being discovered at Coursera. I am undergoing intensive 'Data Whisperer training to pursue the Google Data Analytics Professional Certificate. Becoming a 'Data Whisperer' takes time and dedication—and maybe a little bit of talking to my datasets late at night. 😉 Stay tuned for the stories they tell!
+ </p>
+</section>
+
+<section id="contact" class="section">
+  <h2>How To Reach Me</h2>
+  <div class="contact-icons">
+    <a href="https://www.linkedin.com/in/audrey-ratliff" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:audrey.m.ratliff@gmail.com" title="Gmail"><i class="fas fa-envelope"></i></a>
+  </div>
+  <a href="mailto:audrey.m.ratliff@gmail.com" class="contact-email">audrey.m.ratliff@gmail.com</a>
+</section>
+
+<footer id="footer">
+  &copy; 2025 Audrey Ratliff.<br>
+  Template: <a href="https://html5up.net/big-picture">Big Picture</a> | SVG art by <a href="https://undraw.co/
+</footer>
+
+</body>
+</html>
